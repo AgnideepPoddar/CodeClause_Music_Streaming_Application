@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}New Playlist{% endblock %}
+{% block pagetitle %}<i class="fa fa-music fa-1x"></i>{% endblock %}
+
+{% block content %}
+<body>
+    <div>
+        <div class="register">
+            <h1>Edit Playlist</h1>
+            <form action="" method="post">
+                <label for="firstName">
+					<i class="fas fa-user"></i>
+				</label>
+                <input type="text" name="name" placeholder="Name" id="name" value = {{name}} required>
+                <label>
+					<i class="fas fa-globe"></i>
+				</label>
+                <select name="status" required>
+					{% for s in status %}
+						<option value = "{{s}}"> {{s}}</option>
+					{% endfor %}
+				</select>
+                <div class="msg">{{ msg }}</div>
+                <input type="submit" value="Edit">
+            </form>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
